@@ -1,0 +1,1 @@
+<span>(c) Diatom 2015. </span>
