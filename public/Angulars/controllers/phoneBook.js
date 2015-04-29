@@ -5,6 +5,9 @@
 {
     app.controller('phoneBookController', ['$http', '$modal', '$rootScope', function($http,$modal,$scope)
     {
+        //intit
+        if(!$scope.sessionKey)
+            $location.path("/login");
         this.contacts;
         var that=this;
         $http.post('/API/getContacts',{key:$scope.sessionKey}).success(function(resData)
@@ -16,6 +19,7 @@
                     alert(resData.err);// handle error.
             }
         );
+        //end init
 
         this.setToEdit= function(id)
         {
